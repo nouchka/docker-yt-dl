@@ -1,4 +1,4 @@
-putio:
+yt:
   image: "nouchka/yt-dl"
   container_name: youtube
   environment:
