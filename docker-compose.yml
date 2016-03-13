@@ -1,0 +1,9 @@
+putio:
+  image: "nouchka/yt-dl"
+  container_name: youtube
+  environment:
+    - RSYNC_REPO=youtube
+    - RSYNC_SERVER=rsyncd.server.lan
+    - RSYNC_USER=rsync-user
+    - RSYNC_PASSWORD=rsync-password
+    - YOUTUBE_ID=k7J3E8KkgaM
