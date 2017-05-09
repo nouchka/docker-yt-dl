@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Jean-Avit Promis "docker@katagena.com"
 
 RUN apt-get update && \
-	DEBIAN_FRONTEND=noninteractive apt-get -yq install wget python rsync && \
+	DEBIAN_FRONTEND=noninteractive apt-get -yq install wget python rsync mysql mysql-client && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget https://yt-dl.org/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
