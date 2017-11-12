@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  yt:
+    build: .
+    image: "nouchka/yt-dl"
+    container_name: youtube
+    entrypoint: /playlist.sh
+    environment:
+      - YOUTUBE_PLAYLIST=UCn6wkqrVKWpvWtKlHiTAvyA UCgsTGuH5uCyL06kKY843fgw UCuNy42Y5egf07cSiHbF23wg UCA9QYuUcPGYbbXPqkSDSd3g
+    volumes:
+      - youtube:/data
+
+volumes:
+  youtube:
+    driver: local
