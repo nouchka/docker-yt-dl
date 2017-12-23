@@ -1,2 +1,2 @@
 prefix = /usr/local
-install:; install bin/yt-dl $(prefix)/bin
+install:; install bin/yt $(prefix)/bin
