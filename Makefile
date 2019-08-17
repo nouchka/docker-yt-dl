@@ -29,6 +29,17 @@ build-deb: deb
 push-deb: build-deb
 	package_cloud push nouchka/home/ubuntu/xenial $(NAME)_*.deb
 
+build:
+	docker build -t $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) .
+
+run:
+	./bin/$(DOCKER_IMAGE)
+
+check:
+	docker run --rm -i hadolint/hadolint < Dockerfile
+
+test: build run check
+
 install:
 	install bin/yt $(prefix)/bin
 	install bin/yt-mp3 $(prefix)/bin
