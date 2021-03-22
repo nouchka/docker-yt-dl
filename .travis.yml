@@ -1,5 +1,13 @@
+sudo: required
+services:
+  - docker
+
 before_install:
   - gem install fpm package_cloud
 
 script:
-  - make push-deb
+  - make test
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then make push-deb; fi
+
+notifications:
+  email: docker@katagena.com

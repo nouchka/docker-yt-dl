@@ -2,5 +2,4 @@
 
 docker run -it --rm \
 	-v $(pwd):/data \
-	--entrypoint "/usr/local/bin/youtube-dl" \
 	nouchka/yt-dl:latest -f 18 -x --audio-format mp3 $@
